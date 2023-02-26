@@ -8,10 +8,6 @@ function Register() {
     const [isColor, setIsColor] = useState('');
     const [isErrMessage,setIsErrMessage] = useState('');
 
-    const getInfo = (e:any) => {
-        console.log(setIsPassword(e.target.value))
-        console.log(isPassword)
-    }
     const checkPassword = (e:any) => {
 
         setIsPassword(e.target.value)
@@ -33,6 +29,14 @@ function Register() {
             setIsErrMessage('Success')
         }
     }
+
+    const checkRegister = () =>{
+        if(isColor === 'green'){
+            alert('success')
+        }else{
+            alert('fix your password')
+        }
+    }
     return (
         <div className='register__container'>
             <h2>Registration Form</h2>
@@ -52,7 +56,7 @@ function Register() {
                 <div className='checker' style={{ backgroundColor: `${isColor}`, transition: 'all .4s' }}></div>
             </div>
             <div className='button__block'>
-                <button onClick = {getInfo}>Register</button>
+                <button onClick={checkRegister}>Register</button>
             </div>
         </div>
     )
